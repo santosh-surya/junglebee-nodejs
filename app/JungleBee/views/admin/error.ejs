@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<% include ../header %>
+<body class="admin">
+	<% include navbar-admin %>
+
+	<!-- Main jumbotron for a primary marketing message or call to action -->
+
+	<div class="container">
+        <div class="row">
+        	<div class="col-md-12">
+                <h2>Error: </h2>
+                <%=JSON.stringify(error, null, 4)%>
+            </div>
+        </div>
+
+		<% include ../footer %>
+	</div>
+	<!-- /container -->
+	<!-- Bootstrap core JavaScript
+    ================================================== -->
+	<!-- Placed at the end of the document so the pages load faster -->
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script src="https://code.jquery.com/jquery.js"></script>
+	<!-- Latest compiled and minified JavaScript -->
+	<script	src="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+	<script	src="/javascripts/junglebee.js"></script>
+</body>
+</html>

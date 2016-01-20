@@ -1,0 +1,101 @@
+<div class="navbar navbar-static-top navbar-inverse ">
+	<div class="container">
+		<div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+				<span class="icon-bar"></span> <span class="icon-bar"></span> <span
+					class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="/"><img src="/images/logo/logo-inverse.png" height="50px" /></a>
+		</div>
+		<div class="navbar-collapse collapse">
+			<ul class="nav navbar-nav  navbar-left">
+				<li <% if (req.originalUrl == '/admin/dashboard') {%> class="active" <% } %> id="dashboard"><a href="/admin/dashboard">Dashboard</a></li>
+				<li <% if (req.originalUrl == '/admin/users') {%> class="active" <% } %> id="users"><a href="/admin/users">Users</a></li>
+				<li <% if (req.originalUrl == '/admin/user-roles') {%> class="active" <% } %> id="user-roles"><a href="/admin/user-roles">Roles</a></li>
+				<li <% if (req.originalUrl == '/admin/suppliers') {%> class="active" <% } %> id="suppliers"><a href="/admin/suppliers">Suppliers</a></li>
+			</ul>
+			<ul class="nav navbar-nav  navbar-right">
+                <%  if (req.session) { 
+                        if (req.session.userName) { %>
+            				<li><div class="welcome">Welcome <%= req.session.userName %></div></li>
+            				<li><div class="welcome  "><a href="/admin/logout">Logout</a></div></li>
+                <%      }
+                    } else { %> 
+    				<li><div class="welcome "><a href="/admin/login">Login</a></div></li>
+                <%  } %>
+			</ul>
+		</div>
+		<!--/.navbar-collapse -->
+	</div>
+</div>
+<!-- navigation back -->
+<div class="container breadcrumb">
+    <div class="row">
+        <div class="col-md-12">
+                <% if (page == 'clients') { %> 
+                    <p class="alert alert-message">
+                        <a href="/admin/dashboard">Dashboard</a> > <%=page%>
+                    </p>
+                <% } else if (page == 'client-edit' && type=='add') { %> 
+                    <p class="alert alert-message">
+                        <a href="/admin/dashboard">Dashboard</a> > <a href="/admin/clients">Clients</a> > Add New Client
+                    </p>
+                <% } else if (page == 'client-edit' && type=='edit') { %> 
+                    <p class="alert alert-message">
+                        <a href="/admin/dashboard">Dashboard</a> > <a href="/admin/clients">Clients</a> > Edit Client
+                    </p>
+                <% } else if (page == 'users') { %> 
+                    <p class="alert alert-message">
+                        <a href="/admin/dashboard">Dashboard</a> > Users
+                    </p>
+                <% } else if (page == 'user-edit' && type=='add') { %> 
+                    <p class="alert alert-message">
+                        <a href="/admin/dashboard">Dashboard</a> > <a href="/admin/users">Users</a> > Add New User
+                    </p>
+                <% } else if (page == 'user-edit' && type=='edit') { %> 
+                    <p class="alert alert-message">
+                        <a href="/admin/dashboard">Dashboard</a> > <a href="/admin/users">Users</a> > Edit User
+                    </p>
+                <% } else if (page == 'user-roles') { %> 
+                    <p class="alert alert-message">
+                        <a href="/admin/dashboard">Dashboard</a> > User Roles
+                    </p>
+                <% } else if (page == 'user-role-edit' && type=='add') { %> 
+                    <p class="alert alert-message">
+                        <a href="/admin/dashboard">Dashboard</a> > <a href="/admin/user-roles">User Roles</a> > Add New User Role
+                    </p>
+                <% } else if (page == 'user-role-edit' && type=='edit') { %> 
+                    <p class="alert alert-message">
+                        <a href="/admin/dashboard">Dashboard</a> > <a href="/admin/user-roles">User Roles</a> > Edit User Role
+                    </p>
+                <% } %>
+        </div>
+    </div>
+</div>
+<!-- error & messages -->
+<div class="container container-message">
+    <div class="row">
+        <div class="col-md-12">
+            <% if (typeof req.query.error != 'undefined') { %> 
+                <div class="alert alert-danger"><%=req.query.error%></div>
+            <% }else if (typeof error != 'undefined') { %> 
+                <div class="alert alert-danger"><%=error%></div>
+            <% } %>
+            <% if (typeof req.query.message != 'undefined') { %> 
+                <div class="alert alert-info "><%=req.query.message%></div>
+            <% }else if (typeof message != 'undefined') { %> 
+                <div class="alert alert-info"><%=message%></div>
+            <% } %>
+            <% if (typeof debug != 'undefined') { %> 
+                <pre class="alert alert-message">
+                    <%-debug%>
+                </pre>
+            <% } %>
+            
+            <!-- <div class="alert alert-success">...</div>
+            <div class="alert alert-info">...</div>
+            <div class="alert alert-warning">...</div>
+            -->
+        </div>
+    </div>
+</div>

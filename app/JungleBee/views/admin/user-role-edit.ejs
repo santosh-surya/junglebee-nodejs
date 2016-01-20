@@ -1,0 +1,70 @@
+<div class="row">
+	<div class="col-md-12">
+        <form method="post" role="form" class="form-horizontal">
+        <div class="form-group">
+          <label class="control-label col-sm-3" for="clientId"></label>
+          <div class="col-sm-9">
+            <h2 class="center-block ">
+                <% if (type == 'add') { %>
+                    Add New User Role 
+                <% } else if (typeof id != 'undefined'){ %>
+                    Edit User Role
+                    <input type="hidden" name="id" value="<%=id %>">
+                <% } %>
+            </h2>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label col-sm-3" for="userId">User:</label>
+          <div class="col-sm-9">          
+              <select class="form-control" id="userId" name="userId">
+                  <option value="">Select User</options>
+                  <% for(var i=0; i<users.length; i++) { 
+                      if (userId == users[i]._id) { %>
+                          <option value="<%=users[i]._id%>" selected><%=users[i].firstname+' '+users[i].lastname%></option>
+                  <%  } else { %>
+                          <option value="<%=users[i]._id%>"><%=users[i].firstname+' '+users[i].lastname%></option>
+                  <%  }
+                     } %>
+              </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label col-sm-3" for="clientId">Client:</label>
+          <div class="col-sm-9">          
+              <select class="form-control" id="clientId" name="clientId">
+                  <option value="">Select Client</options>
+                  <% for(var i=0; i<clients.length; i++) { 
+                          if(clientId == clients[i].clientId ) { %>
+                              <option value="<%=clients[i].clientId%>" selected><%=clients[i].clientId%></option>
+                          <% } else { %>
+                              <option value="<%=clients[i].clientId%>"><%=clients[i].clientId%></option>
+                  <%        }
+                       }%>
+              </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label col-sm-3" for="role">Role:</label>
+          <div class="col-sm-9">          
+              <select class="form-control" id="role" name="role">
+                  <option value="">Select Role</options>
+                  <% for(var i=0; i<roles.length; i++) {
+                      if (role == roles[i].name) { %>
+                      <option value="<%=roles[i].name%>" selected ><%=roles[i].name%></option>
+                  <%  } else { %>
+                      <option value="<%=roles[i].name%>"><%=roles[i].name%></option>
+                  <%  }
+                     } %>
+              </select>
+          </div>
+        </div>
+        <div class="form-group">        
+          <div class="col-sm-offset-3 col-sm-9">
+            <button type="submit" class="btn btn-primary">Submit</button>
+            <a class="btn btn-danger" href="/admin/user-roles">Cancel</a>
+          </div>
+        </div>
+        </form>
+    </div>
+</div>

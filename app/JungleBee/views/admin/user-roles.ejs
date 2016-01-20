@@ -1,0 +1,37 @@
+<div class="row">
+	<div class="col-md-12">
+        <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th>UserId</th>
+                <th>CleintId</th>
+                <th>Role</th>
+                <th>Action</td>
+              </tr>
+            </thead>
+            <tbody>
+        <%  if (typeof userroles != 'undefined' && userroles.length>0) {
+                for (i=0; i<userroles.length; i++) { %>
+              <tr>
+                <td><%=userroles[i].firstname+' '+userroles[i].lastname %></td>
+                <td><%=userroles[i].clientId %></td>
+                <td><%=userroles[i].role %></td>
+                <td><a class="btn btn-success" href="/admin/user-roles/add?id=<%=userroles[i]._id %>">Edit</a> <a class="btn btn-danger" href="/admin/user-roles/delete?id=<%=userroles[i]._id %>">Delete</a></td>
+              </tr>
+                
+        <%      }
+            } else { %> 
+              <tr>
+                  <td colspan=4>No User Roles found ...</td>
+              </tr>
+        <%  } %>
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="row">
+	<div class="col-md-12">
+        <a class="btn btn-primary" href="/admin/user-roles/add">Create New User Role</a>
+    </div>
+</div>
+

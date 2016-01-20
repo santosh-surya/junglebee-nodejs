@@ -1,0 +1,120 @@
+@font-face {
+  font-family: 'Chewy';
+  font-style: normal;
+  font-weight: 200;
+  src: local('Chewy'), url(../fonts/Chewy/Chewy.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'PatrickHand';
+  font-style: normal;
+  font-weight: 400;
+  src: local('PatrickHand'), url(../fonts/Patrick_Hand/PatrickHand-Regular.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Share';
+  font-style: normal;
+  font-weight: 200;
+  src: local('Share'), url(../fonts/Share/Share-Regular.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Share Bold';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Share Bold'), url(../fonts/Share/Share-Bold.ttf) format('truetype');
+}
+
+body {
+  font: 18px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+/* admin section */
+.admin .navbar-nav>li>a{
+    line-height: 50px;
+    font-size: 25px;
+    font-family: 'Share';
+}
+.admin .welcome{
+    color: #ddd;
+    line-height: 50px;
+    font-size: 20px;
+    font-family: 'Share';
+    padding-top: 15px;
+    padding-left: 10px;
+}
+.admin .welcome a{
+    color: #fff;
+    line-height: 50px;
+    font-size: 20px;
+    font-family: 'Share';
+    font-style: bold;
+    padding-top: 15px;
+}
+.admin .panel-title {
+    font-size: 1.4em;
+}
+.admin button.btn.btn-block{
+}
+.breadcrumb{
+    margin-top: -20px;
+    background-color: transparent;
+    font-size: .8em;
+    margin-bottom: 0px;
+    padding: 0px 15px;
+}
+.breadcrumb p.alert.alert-message{
+    background-color: #f1f1f1
+}
+/* normal website */
+.navbar {
+    min-height: 50px;
+/*    overflow: hidden;*/
+    background-color: #efefef;
+}
+.navbar-nav{
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+.navbar-nav>li>a{
+    line-height: 50px;
+    font-size: 25px;
+    color: #144312;
+    font-family: 'Chewy';
+    
+}
+.navbar-collapse.in .navbar-nav>li>a{
+    font-size: 20px;
+    line-height: 2em;
+}
+.navbar-toggle{
+    padding-top: 10px;
+    margin-top: 18px;
+}
+.navbar-toggle .icon-bar{
+    border: 1.5px solid #144312;
+    width: 24px;
+}
+.navbar-inverse .navbar-toggle .icon-bar{
+    border: 1.5px solid #efefef;
+    width: 24px;
+}
+.navbar-nav>li.active{
+    background-color: #e1e1e1
+}
+.navbar-nav>li>a:hover{
+    background-color: #ddd;
+    text-decoration: underline;
+}
+.navbar-nav>li.active>a:hover{
+    background-color: #e1e1e1;
+    text-decoration: none;
+    cursor: pointer;
+}
+.jumbotron{
+    background-color: #fff;
+}
+.navbar-static-top {
+}
+

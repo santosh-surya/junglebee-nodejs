@@ -1,0 +1,61 @@
+<div class="row">
+	<div class="col-md-12">
+        <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th>Client Id</th>
+                <th>Client Secret</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+        <%  if (typeof clients != 'undefined' && clients.length>0) {
+                for (i=0; i<clients.length; i++){ %>
+              <tr>
+                <td><%=clients[i].clientId %></td>
+                <td><%=clients[i].clientSecret %></td>
+                <td><a class="btn btn-success" href="/admin/clients/add?id=<%=clients[i]._id %>">Edit</a>
+                    <a class="btn btn-danger" href="/admin/clients/delete?id=<%=clients[i]._id %>">Delete</a></td>
+              </tr>
+                
+        <%      }
+            } else { %> 
+              <tr>
+                  <td colspan=3>No Clients found ...</td>
+              </tr>
+        <%  } %>
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="row">
+	<div class="col-md-12">
+        <a class="btn btn-primary" href="/admin/clients/add">Create New Client</a>
+    </div>
+</div>
+
+
+<!-- <div class="row">
+    <div class="col-md-12">
+        <h2 class="center-block ">Add New Client</h2>
+        <form method="post" action="/admin/clients/add" role="form" class="form-horizontal">
+        <div class="form-group">
+          <label class="control-label col-sm-3" for="clientId">ClientId:</label>
+          <div class="col-sm-9">
+            <input type="text" class="form-control" id="clientId" name="clientId" placeholder="Enter Client Id" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label col-sm-3" for="clientSecret">ClientSecret:</label>
+          <div class="col-sm-9">
+            <input type="text" class="form-control" id="clientSecret" name="clientSecret" placeholder="Enter Client Secret" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-sm-offset-3 col-sm-9">
+            <button type="submit" class="btn btn-default">Submit</button>
+          </div>
+        </div>
+        </form>
+    </div>
+</div> -->

@@ -1,0 +1,38 @@
+<div class="row">
+	<div class="col-md-12">
+        <form method="post" role="form" class="form-horizontal">
+        <div class="form-group">
+          <label class="control-label col-sm-3" for="clientId"></label>
+          <div class="col-sm-9">
+            <h2 class="center-block ">
+                <% if (type == 'add') { %>
+                    Add New Client 
+                <% } else if (typeof id != 'undefined'){ %>
+                    Edit Client
+                    <input type="hidden" name="id" value="<%=id %>">
+                <% } %>
+            </h2>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label col-sm-3" for="clientId">ClientId:</label>
+          <div class="col-sm-9">
+            <input type="text" class="form-control" id="clientId" name="clientId" placeholder="Enter Client Id" required value="<%=clientid%>">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label col-sm-3" for="clientSecret">ClientSecret:</label>
+          <div class="col-sm-9">          
+            <input type="text" class="form-control" id="clientSecret" name="clientSecret" placeholder="Enter Client Secret" required value="<%=clientsecret%>">
+          </div>
+        </div>
+        <div class="form-group">        
+          <div class="col-sm-offset-3 col-sm-9">
+            <button type="submit" class="btn btn-primary">Submit</button>
+            <a class="btn btn-danger" href="/admin/clients">Cancel</a>
+            
+          </div>
+        </div>
+        </form>
+    </div>
+</div>
